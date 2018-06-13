@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ingresoft@localhost">
+  <database-model serializer="dbm" rdbms="UNKNOWN" format-version="4.8">
+    <root id="1">
+      <ServerVersion>5.7</ServerVersion>
+      <DefaultCasing>exact</DefaultCasing>
+    </root>
+    <database id="2" parent="1" name="cocosoft"/>
+    <database id="3" parent="1" name="information_schema"/>
+    <database id="4" parent="1" name="ingresoft">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="5" parent="1" name="mysql"/>
+    <database id="6" parent="1" name="performance_schema"/>
+    <database id="7" parent="1" name="sys"/>
+    <database id="8" parent="1">
+      <Visible>1</Visible>
+    </database>
+    <schema id="9" parent="4">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="10" parent="8">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="11" parent="9" name="autenticacion"/>
+    <table id="12" parent="9" name="ingreso_salidad"/>
+    <table id="13" parent="9" name="rol"/>
+    <table id="14" parent="9" name="sexo"/>
+    <table id="15" parent="9" name="tipo_documento"/>
+    <table id="16" parent="9" name="usuario"/>
+    <column id="17" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="11" name="usuario">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="11" name="password">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="20" parent="11" name="autenticacion_usuario_Idx">
+      <ColNames>usuario</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="21" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="12" name="hora_ingreso">
+      <Position>2</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="12" name="hora_salidad">
+      <Position>3</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="25" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="13" name="nombre">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="28" parent="13" name="rol_nombre_Idx">
+      <ColNames>nombre</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="14" name="nombre">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="14" name="sexo_nombre_Idx">
+      <ColNames>nombre</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="15" name="nombre">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="36" parent="15" name="tipo_documento_nombre_Idx">
+      <ColNames>nombre</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="16" name="nombre">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="16" name="apellido">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="41" parent="16" name="numero_documento">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="fecha_nacimiento">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="16" name="fk_id_tipo_documento">
+      <Position>6</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="16" name="fk_id_sexo">
+      <Position>7</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="16" name="fk_id_rol">
+      <Position>8</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="16" name="fk_id_ingreso_salidad">
+      <Position>9</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+    </column>
+    <column id="47" parent="16" name="fk_id_autenticacion">
+      <Position>10</Position>
+      <DataType>INT UNSIGNED(10)|4s</DataType>
+    </column>
+    <key id="48" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="16" name="fk_usuario_tipo_documento">
+      <ColNames>fk_id_tipo_documento</ColNames>
+      <RefTableName>tipo_documento</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="50" parent="16" name="fk_usuario_sexo">
+      <ColNames>fk_id_sexo</ColNames>
+      <RefTableName>sexo</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="51" parent="16" name="fk_usuario_rol">
+      <ColNames>fk_id_rol</ColNames>
+      <RefTableName>rol</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="52" parent="16" name="fk_usuario_ingreso_salidad">
+      <ColNames>fk_id_ingreso_salidad</ColNames>
+      <RefTableName>ingreso_salidad</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="16" name="fk_usuario_autenticacion">
+      <ColNames>fk_id_autenticacion</ColNames>
+      <RefTableName>autenticacion</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
