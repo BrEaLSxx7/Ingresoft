@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="ingresoft" nm="ingresoft" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>/home/sebascano/developer/senasoft/cocosoft</DocFolder>
+  <Sch Cm="" nm="schemaA">
+    <Tbl UsSo="1" nm="autenticacion">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pkautenticacion"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="usuario" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="password" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Idx clu="0" ftx="0" nm="autenticacion_usuario_Idx" spa="0" unq="1">
+        <ClNs>usuario</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="ingreso_salidad">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pkingreso_salidad"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hora_ingreso" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hora_salidad" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="rol">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pkrol"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Idx clu="0" ftx="0" nm="rol_nombre_Idx" spa="0" unq="1">
+        <ClNs>nombre</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sexo">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pksexo"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Idx clu="0" ftx="0" nm="sexo_nombre_Idx" spa="0" unq="1">
+        <ClNs>nombre</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tipo_documento">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pktipo_documento"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Idx clu="0" ftx="0" nm="tipo_documento_nombre_Idx" spa="0" unq="1">
+        <ClNs>nombre</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="usuario">
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=latin1</TblOpts>
+      <Pk ClNs="id" nm="pkusuario"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="apellido" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="numero_documento" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_nacimiento" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fk_id_tipo_documento" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fk_id_sexo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fk_id_rol" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fk_id_ingreso_salidad" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fk_id_autenticacion" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="0" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_usuario_autenticacion" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="autenticacion" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="0" nm="usuario" oe="1" sch="schemaA" zr="1"/>
+        <ClPr cdCl="fk_id_autenticacion" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_usuario_ingreso_salidad" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="ingreso_salidad" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="0" nm="usuario" oe="1" sch="schemaA" zr="1"/>
+        <ClPr cdCl="fk_id_ingreso_salidad" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_usuario_rol" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="rol" oe="1" sch="schemaA" zr="0"/>
+        <CdTb mn="1" nm="usuario" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="fk_id_rol" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_usuario_sexo" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="sexo" oe="1" sch="schemaA" zr="0"/>
+        <CdTb mn="1" nm="usuario" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="fk_id_sexo" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_usuario_tipo_documento" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tipo_documento" oe="1" sch="schemaA" zr="0"/>
+        <CdTb mn="1" nm="usuario" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="fk_id_tipo_documento" prCl="id"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="fk_usuario_autenticacion" spa="0" unq="0">
+        <ClNs>fk_id_autenticacion</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="fk_usuario_ingreso_salidad" spa="0" unq="0">
+        <ClNs>fk_id_ingreso_salidad</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="fk_usuario_rol" spa="0" unq="0">
+        <ClNs>fk_id_rol</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="fk_usuario_sexo" spa="0" unq="0">
+        <ClNs>fk_id_sexo</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="fk_usuario_tipo_documento" spa="0" unq="0">
+        <ClNs>fk_id_tipo_documento</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="diagramA">
+    <RnCf ClkAct="true" FtSz="11" lkStgy="RightAngleStrategy" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="1" PkCols="1"/>
+      <ErNotation>BarkerErNotation</ErNotation>
+      <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tipo_documento" x="28" y="24"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="sexo" x="18" y="359"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="autenticacion" x="574" y="27"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="ingreso_salidad" x="576" y="350"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="rol" x="303" y="364"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="usuario" x="257" y="74"/>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="schemaA.usuario.fk_usuario_autenticacion" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="685" x2="685" y1="93" y2="149"/>
+        <positionableLine lineRole="CHILD_LINE" x1="528" x2="681" y1="153" y2="153"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="schemaA.usuario.fk_usuario_ingreso_salidad" parentEdge="NORTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="681" x2="681" y1="350" y2="189"/>
+        <positionableLine lineRole="CHILD_LINE" x1="528" x2="677" y1="185" y2="185"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="schemaA.usuario.fk_usuario_rol" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="401" x2="401" y1="364" y2="231"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="schemaA.usuario.fk_usuario_sexo" parentEdge="NORTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="126" x2="126" y1="359" y2="191"/>
+        <positionableLine lineRole="CHILD_LINE" x1="257" x2="130" y1="187" y2="187"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="schemaA.usuario.fk_usuario_tipo_documento" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="124" x2="124" y1="77" y2="140"/>
+        <positionableLine lineRole="CHILD_LINE" x1="257" x2="128" y1="144" y2="144"/>
+      </positionableLines>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr NxRnmId="7">
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tipo_documento" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="1" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sexo" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="2" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="autenticacion" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="3" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ingreso_salidad" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="4" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="rol" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="5" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuario" SupCls="Schema" SupNme="schemaA">
+      <Rnm id="6" nNm="id" oNm="Id"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.diagramA" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+  </TreePaths>
+  <SqlTexts/>
+</Db>
