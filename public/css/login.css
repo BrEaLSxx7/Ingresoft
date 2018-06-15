@@ -15,7 +15,6 @@ body {background: #5379BA }
     grid-row: 2 / span 2;
     z-index: 1000;
     border-radius: 2%;
-    box-shadow: #000;
     padding: 2vw;
 }
 
@@ -23,12 +22,15 @@ body {background: #5379BA }
     background: #8FA4F2;
     grid-column: 2 / span 2;
     grid-row: 1 / span 2;
+    /*border: 20px solid #fff*/
 }
 
 .color2{
     background: #8C8C8C;
     grid-column: 4 / span 3;
     grid-row: 1 / span 4;
+    /*border: 50px solid #fff*/
+
 }
 
 /*estilo formulario*/
@@ -54,7 +56,7 @@ label{
 }
 
 @media (min-width: 501px) and (max-width: 800px) {
-   .form{
+    .form{
         grid-column: 2 / span 4;
     }
 }

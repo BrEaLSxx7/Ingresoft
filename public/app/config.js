@@ -23,5 +23,23 @@ angular.module('Ingresoft').config(['$stateProvider', '$urlRouterProvider', '$lo
             ]);
           }]
       }
+    })
+    .state('vigilante', {
+      url: '/inicio',
+      templateUrl: 'app/templates/vigilante.php',
+      controller: 'vigilanteController',
+      resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+              {
+                serie:true,
+                files: [
+                  'css/vigilante.css',
+                  'app/controller/controller.vigilante.js'
+                ]
+              }
+            ]);
+          }]
+      }
     });
   }]);
