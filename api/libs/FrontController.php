@@ -1,35 +1,60 @@
 <?php
 require_once 'libs/Request.php';
+require_once 'libs/Security.php';
 
 class FrontController
 {
     private $folder = '';
     private $controller = '';
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function run()
     {
         $this->friendUrl();
         $request = $this->request();
         $this->LoadController();
         $controller = new $this->controller();
-        $controller->main($request);
+        $security = $this->security();
+        $controller->main($request, $security);
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     private function LoadController()
     {
         require_once __DIR__ . '../../Controller/' . $this->folder . '/' . $this->controller . '.php';
     }
 
-    private function request()
+    /**
+     * @return \Security
+     */
+    private function security(): Security
     {
-        $tmp= explode(';',$_SERVER['CONTENT_TYPE']);
+        return new Security();
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return Request
+     */
+    private function request(): Request
+    {
+        $tmp = explode(';', $_SERVER['CONTENT_TYPE']);
         $post = array();
         $get = array();
         $put = array();
         $delete = array();
-        $files=array();
-        if ('multipart/form-data'===$tmp[0]){
-            $files=$_FILES;
+        $files = array();
+        if ('multipart/form-data' === $tmp[0]) {
+            $files = $_FILES;
         }
         if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
             $post = $_REQUEST;
@@ -46,15 +71,21 @@ class FrontController
                 }
             }
         }
-        return new Request($post, $get, $put, $delete,$files);
+        return new Request($post, $get, $put, $delete, $files);
     }
 
-    private function friendUrl()
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    private function friendUrl(): void
     {
         $load = explode("/", $_SERVER['PATH_INFO']);
         $this->folder = $load[1];
         $this->controller = $load[1] . 'Controller';
     }
+
     protected function config()
     {
         $gestor = fopen('config/.env', 'r');

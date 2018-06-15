@@ -4,16 +4,11 @@ require_once "libs/Response.php";
 
 class ImagenController extends ImagenModel
 {
-    public function main(Request $request)
+    public function main(Request $request, Security $security)
     {
-        $base64 = $request->getPost()['base64'];
-        $name = '/home/sebascano/developer/pruebas/subir-archivos/public/img/' . $request->getPost()['name'] . '.png';
-        $base_to_php = explode(',', $base64);
-        $data = base64_decode($base_to_php[1]);
-        var_dump($base_to_php);
-        var_dump($name);
-        file_put_contents($name, $data);
-        // move_uploaded_file($data, $name);
+        $request->getPost()['nombre'];
+        $answer = $this->getTable(['id', 'nombre'], 'usuario', ['id' => 1]);
+        $res = $this->addTable(['nombre' => 'sebas', 'apllido' => 'ssasa'], 'usuario');
     }
 
 }
