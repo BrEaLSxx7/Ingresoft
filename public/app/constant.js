@@ -1,0 +1,1 @@
+angular.module('Ingresoft').constant('urlBase', 'http://localhost:8080/Ingresoft/public/.php');
